@@ -1,0 +1,13 @@
+import { SafeAreaView } from "react-native-safe-area-context"
+import { NavigationContainer } from "@react-navigation/native"
+import MainNavigator from "./main"
+
+const AppNavigator = () => {
+    return (
+        <NavigationContainer>
+            <MainNavigator />
+        </NavigationContainer>
+    )
+}
+
+export default AppNavigator
