@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native"
+import { StyleSheet, Dimensions } from "react-native"
+
+const { height, width } = Dimensions.get("window")
 
 export default styles = StyleSheet.create({
     container: {
@@ -6,5 +8,14 @@ export default styles = StyleSheet.create({
         backgroundColor: "#fff",
         alignItems: "center",
         justifyContent: "center",
+    },
+    details: {
+        height: height / 2,
+        justifyContent: "space-around",
+        alignItems: "center",
+    },
+    text: {
+        fontFamily: "Lato-Bold",
+        fontSize: 20,
     },
 })

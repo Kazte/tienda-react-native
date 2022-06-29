@@ -1,11 +1,22 @@
 import { StatusBar } from "expo-status-bar"
-import { Button, Text, View } from "react-native"
+import { FlatList, View } from "react-native"
+import { CategoryItem } from "../../components/components"
+import { categories } from "../../data/categories"
 import styles from "./styles"
 
 const CategoriesScreen = ({ navigation }) => {
+    const renderItem = ({ item }) => <CategoryItem item={item} onSelected={onSelected} />
+
+    const onSelected = (item) => {
+        navigation.navigate("Products", {
+            categoryId: item.id,
+            title: item.title,
+        })
+    }
+
     return (
         <View style={styles.container}>
-            <Button title="Go to Products" onPress={() => navigation.navigate("Products")} />
+            <FlatList data={categories} renderItem={renderItem} numColumns={2} keyExtractor={(item) => item.id} />
         </View>
     )
 }
