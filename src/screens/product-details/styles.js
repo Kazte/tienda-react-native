@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions } from "react-native"
 
 const { height, width } = Dimensions.get("window")
 
-export default styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#fff",
